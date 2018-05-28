@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Site made with Mobirise Website Builder v4.7.6, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.7.6, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
+  <meta name="description" content="Site Generator Description">
+  <title>Login</title>
+  <link rel="stylesheet" href="assets/tether/tether.min.css" th:href="@{/tether.min.css}">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap.min.css}">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css" th:href="@{/bootstrap-grid.min.css}">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css" th:href="@{/bootstrap-reboot.min.css}">
+  <link rel="stylesheet" href="assets/theme/css/style.css" th:href="@{/style.css}">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css" th:href="@{/mbr-additional.css}">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script type="text/javascript" src="../jquery.min.js" th:href="@{/jquery.min.js}"></script>
+  <script type="text/javascript" src="../popper.min.js" th:href="@{/popper.min.js}"></script>
+  <script type="text/javascript" src="../tether.min.js" th:href="@{/tether.min.js}"></script>
+  <script type="text/javascript" src="../bootstrap.min.js" th:href="@{/bootstrap.min.js}"></script>
+  <script type="text/javascript" src="../smooth-scroll.js" th:href="@{/smooth-scroll.js}"></script>
+  <script type="text/javascript" src="/app/login.controller.js" th:href="@{/app/login.controller.js}"></script> 
+  
+  
+</head>
+<body>
+  <section class="mbr-section form1 cid-qTbcOagSEH" id="form1-a">
+
+    
+
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2"></h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5"></h3>
+            </div>
+        </div>
+    </div>
+    <div class="container" data-ng-app="app.login">
+        <div class="row justify-content-center">
+            <div class="media-container-column col-lg-8" data-ng-controller="LoginController">
+                   
+                    <form class="mbr-form" data-ng-submit="submit()">
+                        <div class="row row-sm-offset">
+                            <div class="col-md-4 multi-horizontal" data-for="username">
+                                <div class="form-group">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="username-form1-a">Username<br></label>
+                                    <input type="text" class="form-control" name="username" data-form-field="Userame" data-ng-model="username" required="" id="username-form1-a">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 multi-horizontal" data-for="password">
+                                <div class="form-group">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="password-form1-a">Password</label>
+                                    <input type="password" class="form-control" name="password" data-form-field="Password" data-ng-model="password" required="" id="password-form1-a">
+                                </div>
+                            </div>
+                        </div>
+                        
+            
+                        <span class="input-group-btn"><button href="" type="submit" class="btn btn-form btn-black display-4">LOGIN</button></span>
+                    </form>
+                    
+                      
+                    <form action="/">
+   								 <input type="submit" value="Home" />
+					</form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <section class="engine"><a href="https://mobirise.me/u">bootstrap website templates</a></section>
+  
+  
+</body>
+</html>

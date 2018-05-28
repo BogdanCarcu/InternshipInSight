@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Site made with Mobirise Website Builder v4.7.6, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.7.6, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
+  <meta name="description" content="Web Page Maker Description">
+  <title>CompanyRegistration</title>
+  <link rel="stylesheet" href="assets/tether/tether.min.css" th:href="@{/tether.min.css}">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap.min.css}">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css" th:href="@{/bootstrap-grid.min.css}">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css" th:href="@{/bootstrap-reboot.min.css}">
+  <link rel="stylesheet" href="assets/theme/css/style.css" th:href="@{/style.css}">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css" th:href="@{/mbr-additional.css}">
+ <!-- <script type="text/javascript" src="../angular.min.js" th:href="@{/angular.min.js}"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script type="text/javascript" src="../jquery.min.js" th:href="@{/jquery.min.js}"></script>
+  <script type="text/javascript" src="../popper.min.js" th:href="@{/popper.min.js}"></script>
+  <script type="text/javascript" src="../tether.min.js" th:href="@{/tether.min.js}"></script>
+  <script type="text/javascript" src="../bootstrap.min.js" th:href="@{/bootstrap.min.js}"></script>
+  <script type="text/javascript" src="../smooth-scroll.js" th:href="@{/smooth-scroll.js}"></script>
+ <!--   <script type="text/javascript" src="../script.js" th:href="@{/script.js}"></script> -->
+  <script type="text/javascript" src="/app/companyregistration.controller.js" th:href="@{/app/companyregistration.controller.js}"></script> 
+  
+  
+</head>
+<body>
+  <section class="mbr-section form1 cid-qTbgIm1ihm" id="form1-d">
+
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">Registration</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">
+                    Fill in all the needed data</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container" data-ng-app="app.controllers2">
+        <div class="row justify-content-center">
+            <div class="media-container-column col-lg-8" data-ng-controller="CompanyRegistrationController">
+                    <div data-form-alert="" hidden="">Thanks for filling out the form!</div>
+            
+                    <form onsubmit="return confirm('Registration successful!');" class="mbr-form" data-ng-submit="submitForm()">
+                        <div class="row row-sm-offset">
+                            <div class="col-md-4 multi-horizontal" data-for="username">
+                                <div class="form-group">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="username-form1-d">Username</label>
+                                    <input type="text" class="form-control" name="username"  data-ng-model="username" data-form-field="Username" required="" id="username-form1-d">
+                                </div>
+                            </div>
+                            <div class="col-md-4 multi-horizontal" data-for="password">
+                                <div class="form-group">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="password-form1-d">Password</label>
+                                    <input type="password" class="form-control" name="password"  data-ng-model="password" data-form-field="Password" required="" id="password-form1-d">
+                                </div>
+                            </div>
+                            <div class="col-md-4 multi-horizontal" data-for="name">
+                                <div class="form-group">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="name-form1-d">Name</label>
+                                    <input type="text" class="form-control" name="name"  data-ng-model="name" data-form-field="Name" required="" id="name-form1-d">
+                                </div>
+                            </div>
+                            <div class="col-md-4 multi-horizontal" data-for="numberOfEmployees">
+                                <div class="form-group">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="numberOfEmployees-form1-d">Number of Employees</label>
+                                    <input type="text" class="form-control" name="numberOfEmployees"  data-ng-model="numberOfEmployees" data-form-field="NumberOfEmployees" required="" id="numberOfEmployees-form1-d">
+                                </div>
+                            </div>
+                        </div>
+                        
+            
+                        <span class="input-group-btn"><button href="" type="submit" class="btn btn-form btn-black display-4">REGISTER</button></span>
+                        
+                    </form>
+                    
+                      <form action="/">
+   								 <input type="submit" value="Home" />
+					  </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <section class="engine"><a href="https://mobirise.me/j">website templates</a>
+
+  
+</body>
+</html>
