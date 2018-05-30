@@ -82,6 +82,16 @@ public class CompanyServiceImpl implements CompanyService{
 		return null;
 		
 	}
+
+	@Override
+	public Company getCompanyByUsername(String username) {
+		CompanyDto response = companyRepository.findByUsername(username);
+		
+		if(response != null)
+			return myMapper.map(response, Company.class);
+		else
+			return null;
+	}
 	
 
 }

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Site made with Mobirise Website Builder v4.7.6, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.7.6, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
+  <meta name="description" content="Website Creator Description">
+  <title>InternshipAdvertisement</title>
+  <link rel="stylesheet" href="assets/tether/tether.min.css" th:href="@{/tether.min.css}">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap.min.css}">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css" th:href="@{/bootstrap-grid.min.css}">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css" th:href="@{/bootstrap-reboot.min.css}">
+  <link rel="stylesheet" href="assets/theme/css/style.css" th:href="@{/style.css}">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css" th:href="@{/mbr-additional.css}">
+ <!-- <script type="text/javascript" src="../angular.min.js" th:href="@{/angular.min.js}"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script type="text/javascript" src="../jquery.min.js" th:href="@{/jquery.min.js}"></script>
+  <script type="text/javascript" src="../popper.min.js" th:href="@{/popper.min.js}"></script>
+  <script type="text/javascript" src="../tether.min.js" th:href="@{/tether.min.js}"></script>
+  <script type="text/javascript" src="../bootstrap.min.js" th:href="@{/bootstrap.min.js}"></script>
+  <script type="text/javascript" src="../smooth-scroll.js" th:href="@{/smooth-scroll.js}"></script>
+ <!--   <script type="text/javascript" src="../script.js" th:href="@{/script.js}"></script> -->
+   
+
+ <!-- <script src="assets/formoid/formoid.min.js" th:href="@{/formoid.min.js}"></script> --> 
+ 
+  
+</head>
+<body>
+  <section class="mbr-section form1 cid-qTbfM6m3HD" id="form1-c">
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">
+                    New Internship</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">
+                    Fill in the internship's details</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container" data-ng-app="app.internshipcreator">
+        <div class="row justify-content-center">
+            <div class="media-container-column col-lg-8" data-ng-controller="InternshipCreatorController">
+        
+            
+                    <form onsubmit="return confirm('Advertisement Completed!');" class="mbr-form" th:attr="ng-submit='submitForm(\''+${username} +'\');'">
+                        <div class="row row-sm-offset">
+                            <div class="col-md-4 multi-horizontal" data-for="name">
+                                <div class="form-group">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="name-form1-c">Name</label>
+                                    <input type="text" class="form-control" name="name" data-ng-model="name" data-form-field="Name" required="" id="name-form1-c">
+                                </div>
+                            </div>
+                            <div class="col-md-4 multi-horizontal" data-for="date">
+                                <div class="form-group">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="password-form1-c">Date</label>
+                                    <input type="date" class="form-control" name="date" data-ng-model="date" data-form-field="Date" required="" id="date-form1-c">
+                                </div>
+                            </div>
+                            <div class="col-md-4 multi-horizontal" data-for="description">
+                                <div class="form-group">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-c">Description</label>
+                                    <input type="text" class="form-control" name="description" data-ng-model="description" data-form-field="Description" required=""  id="description-form1-c">
+                                </div>
+                            </div>
+                            <div class="col-md-4 multi-horizontal" data-for="duration">
+                                <div class="form-group">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="duration-form1-c">Duration (months)</label>
+                                    <input type="text" class="form-control" name="name" data-ng-model="duration" data-form-field="Duration" required=""  id="duration-form1-c">
+                                </div>
+                            </div>
+               
+                        </div>
+                        
+            
+                        <span class="input-group-btn"><button type="submit" class="btn btn-form btn-black display-4">ADVERTISE</button></span>
+                    </form>
+                    
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <section class="engine"><a href="https://mobirise.me/z">best free css templates</a></section>
+  <script type="text/javascript" src="/app/internshipcreation.controller.js" th:href="@{/app/internshipcreation.controller.js}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script type="text/javascript" src="../jquery.min.js" th:href="@{/jquery.min.js}"></script>
+  <script type="text/javascript" src="../popper.min.js" th:href="@{/popper.min.js}"></script>
+  <script type="text/javascript" src="../tether.min.js" th:href="@{/tether.min.js}"></script>
+  <script type="text/javascript" src="../bootstrap.min.js" th:href="@{/bootstrap.min.js}"></script>
+  <script type="text/javascript" src="../smooth-scroll.js" th:href="@{/smooth-scroll.js}"></script>
+ <!--   <script type="text/javascript" src="../script.js" th:href="@{/script.js}"></script> -->
+  <script type="text/javascript" src="/app/internshipcreation.controller.js" th:href="@{/app/internshipcreation.controller.js}"></script>
+  
+</body>
+</html>

@@ -14,12 +14,15 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import dao.IApplicationRepository;
+import dao.ICompanyRepository;
 import dao.IInternshipRepository;
 import dao.IStudentRepository;
 import dao.dbmodel.ApplicationDto;
+import dao.dbmodel.CompanyDto;
 import dao.dbmodel.InternshipDto;
 import dao.dbmodel.StudentDto;
 import model.Application;
+import model.DetailedApplication;
 import model.map.ApplicationToDto;
 import model.map.DtoToApplication;
 import service.ApplicationService;
@@ -30,6 +33,7 @@ public class ApplicationServiceImpl implements ApplicationService{
 	private final IInternshipRepository intRepository;
 	private final IStudentRepository studentRepository;
 	private final IApplicationRepository appRepository;
+	private final ICompanyRepository companyRepository;
 	
 	private ModelMapper myMapper;
 	private JavaMailSender sender;
@@ -51,11 +55,12 @@ public class ApplicationServiceImpl implements ApplicationService{
 
 	@Autowired
 	public ApplicationServiceImpl(IInternshipRepository intRepository, IStudentRepository studentRepository,
-			IApplicationRepository appRepository, JavaMailSender sender) {
+			IApplicationRepository appRepository, JavaMailSender sender, ICompanyRepository companyRepository) {
 		
 			this.intRepository = intRepository;
 			this.studentRepository = studentRepository;
 	        this.appRepository = appRepository;
+	        this.companyRepository = companyRepository;
 	        this.sender = sender;
 	        myMapper = new ModelMapper();
 	        myMapper.addMappings(new ApplicationToDto());
@@ -67,7 +72,7 @@ public class ApplicationServiceImpl implements ApplicationService{
 	public Application apply(String student, String internship, Blob cv) {
 		
 		//save new Application
-		StudentDto studentDto = studentRepository.findByName(student);
+		StudentDto studentDto = studentRepository.findByUsername(student);
 		InternshipDto internshipDto = intRepository.findByName(internship);
 		
 		if(appRepository.findByStudentAndInternship(studentDto, internshipDto) == null) {
@@ -192,6 +197,35 @@ public class ApplicationServiceImpl implements ApplicationService{
 		
 		return null;
 		
+	}
+
+	@Override
+	public List<DetailedApplication> getAll(String company) {
+		
+		CompanyDto cmp = companyRepository.findByUsername(company);
+		List<InternshipDto> internships = intRepository.findAllByCompany(cmp);
+		List<DetailedApplication> result = new ArrayList<DetailedApplication>();
+		
+		for(InternshipDto i : internships) {
+			
+			List<ApplicationDto> apps = appRepository.findAllByInternship(i);
+			
+			for(ApplicationDto a : apps) {
+				
+				DetailedApplication da = new DetailedApplication();
+				da.setName(a.getStudent().getName());
+				da.setAge(a.getStudent().getAge());
+				da.setEmail(a.getStudent().getEmail());
+				da.setUniversity(a.getStudent().getUniversity());
+				da.setInternship(i.getName());
+				
+				result.add(da);
+				
+			}
+			
+		}
+		
+		return result;
 	}
 		
 

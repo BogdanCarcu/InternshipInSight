@@ -36,10 +36,11 @@ public class CompanyController {
 	        }
 	    }
 	    
-	    @GetMapping("/{name}")
-	    public Company getCompanyByName(@PathVariable(value = "name") String name) {
+	   //ATENTIE -> AI SCHIMBAT DE LA NAME LA USERNAME
+	    @GetMapping("/{username}")
+	    public Company getCompanyByName(@PathVariable(value = "username") String username) {
 	        try {
-	            return companyService.getCompanyByName(name);
+	            return companyService.getCompanyByUsername(username);
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	            return null;

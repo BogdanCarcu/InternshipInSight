@@ -13,6 +13,8 @@ public interface ICompanyRepository extends JpaRepository<CompanyDto, Long>{
 
 	public CompanyDto findByName(String name);
 	
+	public CompanyDto findByUsername(String username);
+	
 	public void deleteByName(String name);
 	
 	public CompanyDto findByUsernameAndPassword(String username, String password);

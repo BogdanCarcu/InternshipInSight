@@ -1,7 +1,5 @@
 package controller;
 
-import java.io.BufferedInputStream;
-import java.io.FileOutputStream;
 import java.sql.Blob;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +17,26 @@ public class ReviewCvController {
 
  private final ApplicationService applicationService;
 	 
+ 
 	 @Autowired
 	 public ReviewCvController(ApplicationService applicationService) {
 	        this.applicationService = applicationService;
 	 }
 	 
 	 @GetMapping("")
-	  public String getCompanyByName(@RequestParam(value = "student") String student, 
+	  public byte[] getResume(@RequestParam(value = "student") String student, 
 	    		@RequestParam(value = "internship") String internship) {
 		 
 	  try {
 	        	Application app = applicationService.findApplication(student, internship);
 	        	Blob cv = app.getCv();
 	        	
-				   BufferedInputStream is = new BufferedInputStream(cv.getBinaryStream());
-				   FileOutputStream fos = new FileOutputStream("C:\\CodeBase\\INTERNSHIP_IN_SIGHT\\lel.pdf");
+	        	int blobLength = (int) cv.length();  
+	        	byte[] blobAsBytes = cv.getBytes(1, blobLength);
+	        	
+				 /*  BufferedInputStream is = new BufferedInputStream(cv.getBinaryStream());
+				   String path = "C:\\CodeBase\\INTERNSHIP_IN_SIGHT\\" + getSaltString() + ".pdf";
+				   FileOutputStream fos = new FileOutputStream(path);
 				  
 				   // you can set the size of the buffer
 				   byte[] buffer = new byte[2048];
@@ -44,13 +47,13 @@ public class ReviewCvController {
 				   fos.flush();
 				   fos.close();
 				   is.close();
-				  // cv.free();
+				  // cv.free();*/
 				   
-				   return "Success!";
+				   return blobAsBytes;
 	            
 	      } catch (Exception e) {
 	            e.printStackTrace();
-	            return "Failure!";
+	            return null;
 	      }		
 		 
 	    }

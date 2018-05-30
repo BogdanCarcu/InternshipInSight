@@ -3,6 +3,7 @@ package controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,7 @@ public class FeedbackController {
 	        this.applicationService = applicationService;
 	 }
 	 
-		@PostMapping("/acceptance")
+		@PutMapping("/acceptance")
 	  	public String accept(@RequestParam(required = true) String student,
 				  @RequestParam(required = true) String internship) {
 			
@@ -35,11 +36,11 @@ public class FeedbackController {
 		}
 		
 		@PostMapping("/info")
-	  	public String inform(@RequestParam(required = true) String internship) {
+	  	public boolean inform(@RequestParam(required = true) String internship) {
 		
 			try {
 				applicationService.inform(internship);
-				return "Applicants were informed";
+				return true;
 		
 			} catch (Exception e) {
 				
@@ -47,7 +48,7 @@ public class FeedbackController {
 				
 			}
 			
-			return "Failed operation!";
+			return false;
 		}
 		
 	 

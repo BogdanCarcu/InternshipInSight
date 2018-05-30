@@ -2,7 +2,6 @@ package dao.dbmodel;
 
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -33,7 +32,7 @@ public class CompanyDto {
 	@Column(name = "number_of_employees")
 	private int numberOfEmployees;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "company",  cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "company")
 	private Set<InternshipDto> internships;
 	
 	public CompanyDto() {}

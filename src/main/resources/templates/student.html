@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css" th:href="@{/bootstrap-reboot.min.css}">
   <link rel="stylesheet" href="assets/theme/css/style.css" th:href="@{/style.css}">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css" th:href="@{/mbr-additional.css}">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="../jquery.min.js" th:href="@{/jquery.min.js}"></script>
   <script src="../popper.min.js" th:href="@{/popper.min.js}"></script>
@@ -26,9 +27,9 @@
   <script src="../script.js" th:href="@{/script.js}"></script>
   <script type="text/javascript" src="/app/internships.controller.js" th:href="@{/app/internships.controller.js}"></script>
  <!--  <script type="text/javascript" src="/app/searchinternship.controller.js" th:href="@{/app/searchinternship.controller.js}"></script> --> 
-  
+
 </head>
-<body data-ng-app="app.internship" data-ng-controller="InternshipsController as vm">
+<body data-ng-app="app.internship" data-ng-controller="InternshipsController as vm" sec:authorize="hasRole('STUDENT')">
   <section class="section-table cid-qTbhwkO3NF" id="table1-i">
 
   
@@ -58,8 +59,8 @@
                   
                   
               <th class="head-item mbr-fonts-style display-7">
-                      NAME</th><th class="head-item mbr-fonts-style display-7">DATE</th><th class="head-item mbr-fonts-style display-7">DESCRIPTION</th><th class="head-item mbr-fonts-style display-7">DURATION (MONTHS)</th><th class="head-item mbr-fonts-style display-7">COMPANY</th>
-                      <th class="head-item mbr-fonts-style display-7">EMBARK</th></tr>
+                      NAME</th><th class="head-item mbr-fonts-style display-7" data-type="date" data-format-string="Do MMMM YYYY">DATE</th><th class="head-item mbr-fonts-style display-7">DESCRIPTION</th><th class="head-item mbr-fonts-style display-7">DURATION (MONTHS)</th><th class="head-item mbr-fonts-style display-7">COMPANY</th>
+                      <th class="head-item mbr-fonts-style display-7"></th></tr>
             </thead>
 
             <tbody>
@@ -67,13 +68,16 @@
               
               <tr data-ng-repeat="internship in vm.internships">
                    <td class="body-item mbr-fonts-style display-7">{{internship.name}}</td>
-                   <td class="body-item mbr-fonts-style display-7">{{internship.date}}</td>
+                   <td class="body-item mbr-fonts-style display-7">{{internship.date | date:'MMMM dd, yyyy'}}</td>
                    <td class="body-item mbr-fonts-style display-7">{{internship.description}}</td>
                    <td class="body-item mbr-fonts-style display-7">{{internship.duration}}</td>
                    <td class="body-item mbr-fonts-style display-7">{{internship.company}}</td>
               	   <td>
-                        <button class="btn btn-danger" data-ng-click="vm.applyFor(internship.name)">Apply</button>
+                          <button class="btn btn-danger btn-xs" id="apply" th:attr="ng-click='vm.apply(\''+${username} +'\',internship.name);'">Apply</button> 
+          					<!-- <button class="btn btn-danger" data-ng-click="vm.apply('BlueBrian101', internship.name)">Apply</button> -->
                    </td>
+         
+                   
               </tr>
         
               
@@ -86,10 +90,11 @@
             <div class="col-md-6">
               <div class="dataTables_info mbr-fonts-style display-7">
                		 
-			         <form>
-			   						<input type="submit" value="Prepare resume" />
+			         <form enctype="multipart/form-data">
+			   						<strong>Upload Resume:</strong> 
+									<input type="file" accept=".pdf" name="resume"  id="resume" />
 					 </form>
-			               
+					                
                	<p> </p>
 			         <form action="/login.html">
 			   						<input type="submit" value="Logout" />

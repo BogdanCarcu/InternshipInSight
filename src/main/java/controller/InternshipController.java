@@ -29,11 +29,15 @@ public class InternshipController {
     
     
     @GetMapping("")
-    public List<Internship> getAllInternships(@RequestParam(required = false) String company) {
+    public List<Internship> getAllInternships(@RequestParam(required = false) String company,
+    		@RequestParam(required = false) String student) {
         try {
         	
         	if(company == null)
-        		return internshipService.getAllInternships();
+        		if(student == null)
+        			return internshipService.getAllInternships();
+        		else
+        			return internshipService.getAllInternshipsWithNoApplicantNamed(student);
         	else
         		return internshipService.getAllInternshipsByCompany(company);
         	

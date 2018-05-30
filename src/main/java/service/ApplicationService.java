@@ -4,8 +4,11 @@ import java.sql.Blob;
 import java.util.List;
 
 import model.Application;
+import model.DetailedApplication;
 
 public interface ApplicationService {
+	
+	List<DetailedApplication> getAll(String company);
 	
 	Application findApplication(String student, String internship);
 	

@@ -12,6 +12,8 @@ public interface CompanyService {
 	
 	Company getCompanyByName(String name);
 	
+	Company getCompanyByUsername(String username);
+	
 	Company getCompanyByUsernameAndPassword(String username, String password);
 	
 	void deleteCompanyByName(String name);

@@ -20,9 +20,6 @@ myApp.controller('LoginController', function($scope, $http, $window) {
           var maybe_student = json.substring(2, 9);
           var maybe_company = json.substring(2, 9);
 
-          alert(maybe_company);
-          alert(maybe_student);
-
           var username = response.data["username"];
           
           if(maybe_student == 'student') {

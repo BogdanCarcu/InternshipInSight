@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import model.Company;
-import model.Student;
 import service.CompanyService;
-import service.StudentService;
 
 @RestController
 @RequestMapping("companyregistration")

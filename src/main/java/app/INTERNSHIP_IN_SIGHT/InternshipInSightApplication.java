@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@ComponentScan(basePackages= {"controller", "dao", "dao.dbmodel", "model", "service", "app.INTERNSHIP_IN_SIGHT"})
+@ComponentScan(basePackages= {"controller", "dao", "dao.dbmodel", "model", "service", "app.INTERNSHIP_IN_SIGHT", "config"})
 @EntityScan(basePackages = {"dao.dbmodel"})
 @EnableJpaRepositories("dao")
 @EnableSwagger2

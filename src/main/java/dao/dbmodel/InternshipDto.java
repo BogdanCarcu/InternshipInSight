@@ -36,7 +36,7 @@ public class InternshipDto {
 	@Column(name = "description")
 	private String description;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "company_id", nullable = false)
 	private CompanyDto company; 
 	

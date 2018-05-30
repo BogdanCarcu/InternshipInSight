@@ -12,6 +12,8 @@ public interface InternshipService {
 	
 	List<Internship> getAllInternshipsByCompany(String companyName);
 	
+	List<Internship> getAllInternshipsWithNoApplicantNamed(String userName);
+	
 	Internship getInternshipByName(String name);
 	
 	void deleteInternshipByName(String name);
